@@ -21,10 +21,10 @@ Examples:
 */
 
 function hasAZero(num) { // question
-    let numArr = num.split('');
-    return numArr.some(element => {
-        return element === 0;
-    }).join('');
+    let numString = num.toString().split('');
+    return numString.some(element => {
+        return element === '0'; // since we transfer into a string, we're looking for a 0 string = '0'
+    });
 }
 
 /*
@@ -51,7 +51,7 @@ Examples:
 
 function hasNoDuplicates(arr) { 
     return arr.every(element => {
-        return element === element;
+        return arr.indexOf(element) === arr.lastIndexOf(element); // previous occurance of a specified value
     });
 }
 
@@ -73,7 +73,7 @@ Examples:
 function hasCertainKey(arr, key) {
     return arr.every(element => {
         return key in element;
-    })
+    });
 }
 
 /*
